@@ -5,6 +5,17 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes: [
         {
+            path : '/main',
+            component: AppLayout,
+            children: [
+                {
+                    path: '/',
+                    name: 'main',
+                    component: () => import('@/views/Main.vue')
+                },
+            ]
+        },
+        {
             path: '/',
             component: AppLayout,
             children: [

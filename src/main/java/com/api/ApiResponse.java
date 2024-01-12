@@ -7,13 +7,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class ApiResponse<T> {
 
     private static final String SUCCESS_STATUS = "success";
@@ -55,7 +51,7 @@ public class ApiResponse<T> {
 
     private ApiResponse(String status, T data, String message) {
         this.status = status;
-        //this.data = data;
+        this.data = data;
         this.message = message;
     }
 }
